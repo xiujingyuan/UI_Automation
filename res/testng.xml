@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="自动化测试" configfailurepolicy="skip" preserve-order="true">
+    <test verbose="2" name="博客园">
+        <groups>
+            <run>
+                <include name="functest" />
+                <include name="checkintest" />
+            </run>
+        </groups>
+        <classes>
+            <class name="testCases.Blog.LoginTestCase">
+                <methods>
+                    <parameter name="username" value="晚风那个吹you"></parameter>
+                    <parameter name="password" value="oracle@!qaz0922"></parameter>
+                </methods>
+            </class>
+            <class name="testCases.Blog.writeBlog.WriteBlogTestCases"></class>
+    </classes>
+    </test>
+    <listeners>
+        <!-- class-name的值填写为时间创建的监听器的路径 -->
+        <listener class-name="web.common.ExtentTestNGIReporterListener"></listener>
+    </listeners>
+</suite>

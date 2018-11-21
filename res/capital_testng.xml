@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="UI自动化测试">
+    <test name="财务系统测试结果">
+        <classes>
+            <class name="testCases.Capital.login.CapitalLoginTest">
+                <methods>
+                    <parameter name="username" value="yuanxiujing"/>
+                    <parameter name="password" value="123456"/>
+                </methods>
+            </class>
+            <!--资金管理->银行流水管理->流水列表-->
+            <class name="testCases.Capital.flow.bankflow.SearchAccountWatercourseTest"/>
+            <class name="testCases.Capital.flow.bankflow.ExportAccountWatercourseTest"/>
+            <!--资金管理->银行流水管理->板块流水列表-->
+            <class name="testCases.Capital.flow.bankflow.SearchDiffPlateReportTest"/>
+            <class name="testCases.Capital.flow.bankflow.ExportDiffPlateReportTest"/>
+            <!--资金管理->银行流水管理->银行流水相关报表->资金日报报表-->
+            <class name="testCases.Capital.flow.bankReport.SearchPlateBalanceTest"/>
+            <class name="testCases.Capital.flow.bankReport.ExportPlateBalanceTest"/>
+            <!--资金管理->银行流水管理->银行流水相关报表->拨备金核对报表-->
+            <class name="testCases.Capital.flow.bankReport.SearchPrepareTest"/>
+            <!--资金管理->银行流水管理->银行流水科目管理->分类管理-->
+            <class name="testCases.Capital.flow.classify.SearchClassifyTest"/>
+            <class name="testCases.Capital.flow.classify.ViewClassifyTest"/>
+            <class name="testCases.Capital.flow.classify.AddClassifyTest"/>
+            <class name="testCases.Capital.flow.classify.UpdateClassifyTest">
+                <methods>
+                    <include name="updateTest"/>
+                    <include name="confirmTest"/>
+                </methods>
+            </class>
+            <class name="testCases.Capital.flow.classify.DeleteClassifyTest">
+                <methods>
+                    <include name="deleteClassify"/>
+                    <include name="confirmTest"/>
+                </methods>
+            </class>
+            <!--资金管理->银行流水管理->公司管理列表-->
+            <class name="testCases.Capital.flow.company.SearchCompanyListTest"/>
+            <class name="testCases.Capital.flow.company.ExportCompanyTest"/>
+            <class name="testCases.Capital.flow.company.ViewCompanyListTest">
+                <methods>
+                    <include name="viewImport"/>
+                    <include name="viewCompany"/>
+                </methods>
+            </class>
+            <class name="testCases.Capital.flow.company.AddCompanyTest"/>
+            <class name="testCases.Capital.flow.company.UpdateCompanyTest">
+                <methods>
+                    <include name="updateTest"/>
+                    <include name="confirmTest"/>
+                </methods>
+            </class>
+            <!--页面上没有删除功能-->
+            <class name="testCases.Capital.flow.company.DeleteCompanyTest">
+                <methods>
+                    <!--<include name="deleteCompany"/>-->
+                    <!--<include name="confirmTest"/>-->
+                    <include name="clearData"/>
+                </methods>
+            </class>
+            <!--资金管理->银行流水管理->账户余额列表-->
+            <class name="testCases.Capital.flow.everydayaccountbalance.SearchAccountBalanceTest"/>
+            <class name="testCases.Capital.flow.everydayaccountbalance.ExportAccountBalanceTest"/>
+            <!--资金管理->银行流水管理->异常流水列表-->
+            <class name="testCases.Capital.flow.flowAbnormalWatercourse.SearchAbnormalWatercourseTest"/>
+            <!--资金管理->银行流水管理->账户管理列表-->
+            <class name="testCases.Capital.flow.flowbankaccount.SearchAccountTest"/>
+            <class name="testCases.Capital.flow.flowbankaccount.ExportAccountTest"/>
+            <class name="testCases.Capital.flow.flowbankaccount.ViewAccountTest">
+                <methods>
+                    <include name="viewImport"/>
+                    <include name="viewBankFlow"/>
+                    <include name="viewAccount"/>
+                </methods>
+            </class>
+            <class name="testCases.Capital.flow.flowbankaccount.NotUploadAccountTest"/>
+            <class name="testCases.Capital.flow.flowbankaccount.AddAccountTest"/>
+            <class name="testCases.Capital.flow.flowbankaccount.UpdateAccountTest">
+                <methods>
+                    <include name="updateTest"/>
+                    <include name="confirmTest"/>
+                    <include name="clearData"/>
+                </methods>
+            </class>
+            <!--会计核算->月度报表->单体报表->单体A1A2A3报表-->
+            <class name="testCases.Capital.accountingReport.A1A2A3Report.SearchA1A2A3ReportTest"/>
+            <class name="testCases.Capital.accountingReport.A1A2A3Report.ExportA1A2A3ReportTest"/>
+            <!--会计核算->月度报表->配置管理->科目列表-->
+            <class name="testCases.Capital.accountingReport.accountingAccount.SearchAccountingAccountTest"/>
+            <class name="testCases.Capital.accountingReport.accountingAccount.ViewAccountingAccountTest"/>
+            <class name="testCases.Capital.accountingReport.accountingAccount.CreateAccountingAccountTest"/>
+            <class name="testCases.Capital.accountingReport.accountingAccount.UpdateAccountingAccountTest">
+                <methods>
+                    <include name="updateTest"/>
+                    <include name="confirmTest"/>
+                </methods>
+            </class>
+            <class name="testCases.Capital.accountingReport.accountingAccount.DeleteAccountingAccountTest">
+                <methods>
+                    <include name="deleteAccountingAccount"/>
+                    <include name="confirmTest"/>
+                </methods>
+            </class>
+            <!--会计核算->月度报表->分析报表->往来账报表->公司余额交叉验证表-->
+            <class name="testCases.Capital.accountingReport.accountingBalanceVerify.SearchAccountingBalanceVerifyTest"/>
+            <class name="testCases.Capital.accountingReport.accountingBalanceVerify.ExportAccountingBalanceVerifyTest"/>
+            <!--会计核算->月度报表->全部科目余额-->
+            <class name="testCases.Capital.accountingReport.acctTrialBalance.SearchAcctTrialBalanceTest"/>
+            <class name="testCases.Capital.accountingReport.acctTrialBalance.ExportAcctTrialBalanceTest"/>
+            <class name="testCases.Capital.accountingReport.acctTrialBalance.ViewImportAcctTrialBalanceTest"/>
+            <!--会计核算->月度报表->分析报表->现金流量表-->
+            <class name="testCases.Capital.accountingReport.cashTransactionReport.SearchCashTransactionReportTest"/>
+            <class name="testCases.Capital.accountingReport.cashTransactionReport.ExportCashTransactionReportTest"/>
+            <!--会计核算->月度报表->合并报表->口径列表-->
+            <class name="testCases.Capital.accountingReport.combinedReport.acctCombinedPlate.ViewAcctCombinedPlateTest"/>
+            <class name="testCases.Capital.accountingReport.combinedReport.acctCombinedPlate.CreateAcctCombinedPlateTest">
+                <methods>
+                    <include name="addTest"/>
+                    <include name="confirmTest"/>
+                    <include name="clearAddData"/>
+                </methods>
+            </class>
+            <!--会计核算->月度报表->合并报表->口径列表->口径公司列表-->
+            <class name="testCases.Capital.accountingReport.combinedReport.acctCombinedPlate.companyList.ViewCompanyListTest"/>
+            <class name="testCases.Capital.accountingReport.combinedReport.acctCombinedPlate.companyList.SearchCompanyListTest"/>
+            <class name="testCases.Capital.accountingReport.combinedReport.acctCombinedPlate.companyList.ExportCompanyListTest"/>
+            <class name="testCases.Capital.accountingReport.combinedReport.acctCombinedPlate.companyList.CreateCompanyListTest">
+                <methods>
+                    <include name="checkIn"/>
+                    <include name="addTest"/>
+                    <include name="confirmTest"/>
+                    <include name="clearAddData"/>
+                </methods>
+            </class>
+            <class name="testCases.Capital.accountingReport.combinedReport.acctCombinedPlate.companyList.UpdateCompanyListTest"/>
+            <!--会计核算->月度报表->合并报表->管报税报公司合并报表-->
+            <class name="testCases.Capital.accountingReport.combinedReport.diameterCombinedReport.SearchDiameterCombinedReportTest"/>
+            <class name="testCases.Capital.accountingReport.combinedReport.diameterCombinedReport.ExportDiameterCombinedReportTest"/>
+            <!--会计核算->月度报表->合并报表->管报税报公司合并报表->查看明细数据-->
+            <class name="testCases.Capital.accountingReport.combinedReport.diameterCombinedReport.diameterCombinedCompanyReport.ViewCompanyReportTest"/>
+            <class name="testCases.Capital.accountingReport.combinedReport.diameterCombinedReport.diameterCombinedCompanyReport.SearchCompanyReportTest"/>
+            <class name="testCases.Capital.accountingReport.combinedReport.diameterCombinedReport.diameterCombinedCompanyReport.ExportCompanyReportTest"/>
+            <!--会计核算->月度报表->合并报表->调整分录抵消明细-->
+            <class name="testCases.Capital.accountingReport.combinedReport.entryBatch.SearchEntryBatchDetailTest"/>
+            <class name="testCases.Capital.accountingReport.combinedReport.entryBatch.ExportEntryBatchDetailTest"/>
+            <!--会计核算->月度报表->合并报表->股权抵消报表-->
+            <class name="testCases.Capital.accountingReport.combinedReport.equityCancellation.SearchEquityCancellationTest"/>
+            <class name="testCases.Capital.accountingReport.combinedReport.equityCancellation.ExportEquityCancellationTest"/>
+            <!--会计核算->月度报表->合并报表->关联方来往抵消报表-->
+            <class name="testCases.Capital.accountingReport.combinedReport.relatedPartyCancellation.SearchRelatedPartyCancellationTest"/>
+            <class name="testCases.Capital.accountingReport.combinedReport.relatedPartyCancellation.ExportRelatedPartyCancellationTest"/>
+            <!--会计核算->月度报表->合并报表->关联方来往抵消报表->关联方往来明细-->
+            <class name="testCases.Capital.accountingReport.combinedReport.relatedPartyCancellation.DetailTest"/>
+            <!--会计核算->月度报表->合并报表->关联交易抵消报表-->
+            <class name="testCases.Capital.accountingReport.combinedReport.relatedTransactionCancellation.SearchRelatedTransactionCancellationTest"/>
+            <class name="testCases.Capital.accountingReport.combinedReport.relatedTransactionCancellation.ExportRelatedTransactionCancellationTest"/>
+            <!--会计核算->月度报表->分析报表->往来账报表->集团内单位往来账-->
+            <class name="testCases.Capital.accountingReport.internalAccounting.SearchInternalAccountingTest"/>
+            <class name="testCases.Capital.accountingReport.internalAccounting.ExportInternalAccountingTest"/>
+            <!--会计核算->月度报表->分析报表->异常统计页-->
+            <class name="testCases.Capital.accountingReport.reportErrorList.SearchErrorListTest"/>
+            <class name="testCases.Capital.accountingReport.reportErrorList.ExportErrorListTest"/>
+            <!--会计核算->月度报表->单体报表->单体资金推导表-->
+            <class name="testCases.Capital.accountingReport.singleReports.capitalDerivationReport.SearchCapitalDerivationReportTest"/>
+            <class name="testCases.Capital.accountingReport.singleReports.capitalDerivationReport.ExportCapitalDerivationReportTest"/>
+            <!--会计核算->月度报表->单体报表->管报税报公司单体报表-->
+            <class name="testCases.Capital.accountingReport.singleReports.singleCompanyReport.SearchSingleCompanyReportTest"/>
+            <class name="testCases.Capital.accountingReport.singleReports.singleCompanyReport.ExportSingleCompanyReportTest"/>
+            <!--会计核算->月度报表->单体报表->管报税报公司单体报表->添加调整分录-->
+            <class name="testCases.Capital.accountingReport.singleReports.singleCompanyReport.entryBatch.ViewEntryBatchTest"/>
+            <class name="testCases.Capital.accountingReport.singleReports.singleCompanyReport.entryBatch.SearchEntryBatchTest"/>
+            <class name="testCases.Capital.accountingReport.singleReports.singleCompanyReport.entryBatch.ExportEntryBatchTest"/>
+            <!--会计核算->月度报表->单体报表->单体变动分析表-->
+            <class name="testCases.Capital.accountingReport.singleReports.variationAnalysisReport.SearchVariationAnalysisReportTest"/>
+            <class name="testCases.Capital.accountingReport.singleReports.variationAnalysisReport.ExportVariationAnalysisReportTest"/>
+        </classes>
+    </test>
+    <listeners>
+        <!-- class-name的值填写为时间创建的监听器的路径 -->
+        <listener class-name="web.common.ExtentTestNGIReporterListener"/>
+    </listeners>
+</suite>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name= "UI_Automation" basedir= "." default="transform">
+    <echo message="The base dir is: ${basedir}"/>
+    <property name= "lib.dir" value= "lib" />
+    <echo message="The base dir is: ${lib.dir}"/>
+    <path id= "test.classpath" >
+        <!-- adding the saxon jar to your classpath -->
+        <fileset dir= "${lib.dir}" includes= "*.jar" />
+    </path>
+    <target name="transform">
+        <xslt in="${basedir}/test-output/testng-results.xml" style="${basedir}/test-output/testng-results.xsl"
+              out="${basedir}/test-output/testReport.html">
+            <param name="testNgXslt.outputDir" expression="${basedir}/test-output"/>
+            <classpath refid="test.classpath"/>
+        </xslt>
+    </target>
+</project>
